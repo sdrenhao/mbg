@@ -8,26 +8,25 @@ import com.uxiaoxi.mbg.utils.CommonUtil;
 /**
  * @author renhao
  *
- * 2015年5月18日
+ *         2015年5月18日
  */
 public class TableInfo {
-    
+
     private String tableName;
 
     private String camelNameU;
-    
+
     private String camelNameL;
-    
+
     public TableInfo() {
-        
-    }
-    
-    public TableInfo (String tableName){
-        this.tableName = tableName;
-        this.camelNameU = CommonUtil.camelName(tableName, false);
-        this.camelNameL = CommonUtil.camelName(tableName, true);
+
     }
 
+    public TableInfo(String tableName, String omitPrefix) {
+        this.tableName = tableName;
+        this.camelNameU = CommonUtil.camelNameOmitPrefix(tableName, false, omitPrefix);
+        this.camelNameL = CommonUtil.camelNameOmitPrefix(tableName, true, omitPrefix);
+    }
 
     /**
      * @return the tableName
@@ -37,7 +36,8 @@ public class TableInfo {
     }
 
     /**
-     * @param tableName the tableName to set
+     * @param tableName
+     *            the tableName to set
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
@@ -51,7 +51,8 @@ public class TableInfo {
     }
 
     /**
-     * @param camelNameU the camelNameU to set
+     * @param camelNameU
+     *            the camelNameU to set
      */
     public void setCamelNameU(String camelNameU) {
         this.camelNameU = camelNameU;
@@ -65,7 +66,8 @@ public class TableInfo {
     }
 
     /**
-     * @param camelNameL the camelNameL to set
+     * @param camelNameL
+     *            the camelNameL to set
      */
     public void setCamelNameL(String camelNameL) {
         this.camelNameL = camelNameL;

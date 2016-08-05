@@ -138,10 +138,10 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
      * @param params
      * @return
      */
-    private List<String> getFormBeanName(String camelName, GeneratorParams params) {
+    private List<String> getFormBeanName(String camelName,  GeneratorParams params) {
     	
     	List<String> list = new ArrayList<String>();
-    	for(String req :params.getReqPathList()) {
+    	for(String req : params.getReqPathList()) {
     		list.add(camelName + CommonUtil.camelName(req,false) + "FormBean.java");
     	}
     	
