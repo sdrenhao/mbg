@@ -40,7 +40,8 @@ public class Generator {
         GeneratorParams info = new GeneratorParams();
         info.setBasePackage("com.ilizhi.mars.admin");
         info.setPackageName("classroom");
-        info.setPath("E:\\eclipse_workspace\\mars\\");
+        String project = "";
+        info.setPath("E:\\eclipse_workspace\\mars\\" + project);
         info.setPrePath("");
         info.setPageName("教室管理");
         info.setGridWidth(2);
@@ -51,16 +52,6 @@ public class Generator {
         // info.getIgnoreList().add("js");
         // info.getIgnoreList().add("service");
         info.getIgnoreList().add("api");
-
-        // 设置生成路径
-        Map<String, String> realPathMap = new HashMap<String, String>();
-        realPathMap.put("api", "mars-admin");
-        realPathMap.put("dao", "mars-admin");
-        realPathMap.put("controller", "mars-admin");
-        realPathMap.put("service", "mars-admin");
-        realPathMap.put("js", "mars-admin");
-        realPathMap.put("html", "mars-admin");
-        info.setRealPathMap(realPathMap);
 
         // api请求路径，生成api的时候有用
         List<String> reqPathList = new ArrayList<String>();

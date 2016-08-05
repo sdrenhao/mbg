@@ -51,9 +51,6 @@ public class GeneratorParams {
      */
     private List<String> reqPathList;
     
-    
-    private Map<String,String> realPathMap;
-    
 
     public GeneratorParams (){
     	
@@ -153,18 +150,6 @@ public class GeneratorParams {
 	public void setReqPathList(List<String> reqPathList) {
 		this.reqPathList = reqPathList;
 	}
-
-
-	public Map<String, String> getRealPathMap() {
-		return realPathMap;
-	}
-
-
-	public void setRealPathMap(Map<String, String> realPathMap) {
-		this.realPathMap = realPathMap;
-	}
-
-
 
 
     
