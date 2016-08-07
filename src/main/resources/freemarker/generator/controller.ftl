@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ${params.basePackage}.biz.${params.packageName}.I${table.camelNameU}Service;
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
 import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.web.common.vo.JqPrmNames;
-import ${params.basePackage}.web.common.vo.ResultBean;
+import ${params.basePackage}.framework.common.vo.JqPrmNames;
+import ${params.basePackage}.framework.common.vo.ResultBean;
 
 /**
  * @author renhao

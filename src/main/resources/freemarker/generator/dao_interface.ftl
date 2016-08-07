@@ -6,7 +6,7 @@ package ${params.basePackage}.db.${params.packageName}.dao;
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
 import ${params.basePackage}.framework.db.IBaseSupport;
 import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.web.common.vo.SqlBean;
+import ${params.basePackage}.framework.common.vo.SqlBean;
 
 /**
  * @author mbg

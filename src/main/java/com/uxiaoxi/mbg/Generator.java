@@ -34,17 +34,18 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("xh_classroom"));
-
+        list.add(new TableParams("yyms_order_state","yyms_"));
+        list.add(new TableParams("yyms_payment_mode","yyms_"));
+        list.add(new TableParams("yyms_payment_state","yyms_"));
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.ilizhi.mars.admin");
-        info.setPackageName("classroom");
+        info.setBasePackage("com.mincoo.yunyams");
+        info.setPackageName("order");
         String project = "";
-        info.setPath("E:\\eclipse_workspace\\mars\\" + project);
+        info.setPath("D:\\eclipse_workspace_java_1.8\\yunyams\\" + project);
         info.setPrePath("");
-        info.setPageName("教室管理");
-        info.setGridWidth(2);
+        info.setPageName("单据列表");
+        info.setGridWidth(6);
 
         // info.getIgnoreList().add("controller");
         // info.getIgnoreList().add("dao");
