@@ -1,5 +1,8 @@
 <#import "/lib/camel.ftl" as uxiaoxi> 
 $(function() {
+
+    $.jgrid.defaults.styleUI = 'Bootstrap';
+    
     $('#list').jqGrid({
         url : '${params.prePath!""}/${params.packageName}/${table.tableName}/data',
         datatype : 'json',

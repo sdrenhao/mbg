@@ -87,7 +87,7 @@ public class ServiceGeneratorHandler implements IGeneratorHandler {
     }
     
     private String getFileName(GeneratorParams params, TableInfo ti,String name) {
-        return getPath(params.getPath() + params.getRealPathMap().get(NAME),params.getBasePackage()) + File.separator
+        return getPath(params.getPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator
                 + name;
     }

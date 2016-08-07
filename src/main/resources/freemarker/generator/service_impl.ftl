@@ -10,8 +10,8 @@ import ${params.basePackage}.biz.${params.packageName}.I${table.camelNameU}Servi
 import ${params.basePackage}.db.${params.packageName}.dao.I${table.camelNameU}Dao;
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
 import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.web.common.vo.ResultBean;
-import ${params.basePackage}.web.common.vo.SqlBean;
+import ${params.basePackage}.framework.common.vo.ResultBean;
+import ${params.basePackage}.framework.common.vo.SqlBean;
 
 /**
  * @author renhao

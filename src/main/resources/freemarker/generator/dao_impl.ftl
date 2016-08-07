@@ -11,7 +11,7 @@ import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU}Exa
 import ${params.basePackage}.db.${params.packageName}.mapper.${table.camelNameU}Mapper;
 import ${params.basePackage}.framework.db.impl.BaseSupport;
 import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.web.common.vo.SqlBean;
+import ${params.basePackage}.framework.common.vo.SqlBean;
 /**
  * @author mbg
  *

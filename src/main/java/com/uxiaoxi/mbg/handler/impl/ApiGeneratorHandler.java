@@ -138,10 +138,10 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
      * @param params
      * @return
      */
-    private List<String> getFormBeanName(String camelName, GeneratorParams params) {
+    private List<String> getFormBeanName(String camelName,  GeneratorParams params) {
     	
     	List<String> list = new ArrayList<String>();
-    	for(String req :params.getReqPathList()) {
+    	for(String req : params.getReqPathList()) {
     		list.add(camelName + CommonUtil.camelName(req,false) + "FormBean.java");
     	}
     	
@@ -171,14 +171,14 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getPath() + params.getRealPathMap().get(NAME),params.getBasePackage()) + File.separator
+        return getPath(params.getPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator 
                 + "controller" + File.separator
                 + getName(ti.getCamelNameU());
     }
     
     private String getFormBeanFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getPath() + params.getRealPathMap().get(NAME),params.getBasePackage()) + File.separator
+        return getPath(params.getPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator 
                 + "formbean" + File.separator 
                 + getFormBeanName(ti.getCamelNameU(),params);
@@ -186,7 +186,7 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
     
     
     private String getVOFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getPath() + params.getRealPathMap().get(NAME),params.getBasePackage()) + File.separator
+        return getPath(params.getPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator 
                 + "vo" + File.separator 
                 + getVOName(ti.getCamelNameU(),params);
