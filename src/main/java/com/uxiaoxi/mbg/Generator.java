@@ -26,7 +26,7 @@ public class Generator {
 
     private static ApplicationContext ctx;
 
-    /**
+    /** 
      * @param args
      */
     public static void main(String[] args) {
