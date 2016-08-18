@@ -14,9 +14,9 @@ import ${params.basePackage}.framework.common.vo.ResultBean;
 import ${params.basePackage}.framework.common.vo.SqlBean;
 
 /**
- * @author renhao
+ * @author mbg
  *
- * 2015年3月27日
+ * ${.now?date}
  */
 @Service
 public class ${table.camelNameU}ServiceImpl implements I${table.camelNameU}Service {
