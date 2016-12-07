@@ -34,25 +34,24 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("yyms_advertisement","yyms_"));
-        list.add(new TableParams("yyms_banner","yyms_"));
-        list.add(new TableParams("yyms_apply","yyms_"));
-        list.add(new TableParams("yyms_apply_state","yyms_"));
+        list.add(new TableParams("test",""));
+
+        
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.mincoo.yunyams");
-        info.setPackageName("homepage");
-        String project = "yunyams";
-        info.setPath("E:\\git\\yunyams\\" + project);
-        info.setPrePath("");
-        info.setPageName("前台显示");
-        info.setGridWidth(6);
+        info.setBasePackage("com.uxiaoxi.pft.appserver");
+        info.setPackageName("test");
+        String project = "pft-server";
+        info.setPath("E:\\git\\pft\\pft-server\\" + project);
+//        info.setPrePath("");
+//        info.setPageName("前台显示");
+//        info.setGridWidth(6);
 
-        // info.getIgnoreList().add("controller");
+//         info.getIgnoreList().add("controller");
         // info.getIgnoreList().add("dao");
-        // info.getIgnoreList().add("html");
-        // info.getIgnoreList().add("js");
-        // info.getIgnoreList().add("service");
+//         info.getIgnoreList().add("html");
+//         info.getIgnoreList().add("js");
+//         info.getIgnoreList().add("service");
         info.getIgnoreList().add("api");
 
         // api请求路径，生成api的时候有用
