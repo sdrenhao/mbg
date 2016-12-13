@@ -9,9 +9,10 @@ import ${params.basePackage}.db.${params.packageName}.dao.I${table.camelNameU}Da
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU}Example;
 import ${params.basePackage}.db.${params.packageName}.mapper.${table.camelNameU}Mapper;
-import ${params.basePackage}.framework.db.impl.BaseSupport;
-import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.framework.common.vo.SqlBean;
+import ${params.packageMap["BaseSupport"]};
+import ${params.packageMap["Page"]};
+import ${params.packageMap["SqlBean"]};
+
 /**
  * @author mbg
  *

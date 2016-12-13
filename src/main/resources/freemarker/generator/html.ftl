@@ -1,7 +1,7 @@
-${r"<#import"} "/lib/html.html" as mincoo> 
+${r"<#import"} "/lib/html.html" as main> 
 ${r"<#assign"} loadcss=[] > 
 ${r"<#assign"} loadscript=["/js/util/utils.js","/js/${params.packageName}/${table.camelNameL}.js"] > 
-${r"<@mincoo.html "} csslist=loadcss scriptlist=loadscript menu="${params.packageName}" submenu="${table.tableName}">
+${r"<@main.html "} csslist=loadcss scriptlist=loadscript menu="${params.packageName}" submenu="${table.tableName}">
 
 <!-- Content Header -->
 <section class="content-header">
@@ -21,4 +21,4 @@ ${r"<@mincoo.html "} csslist=loadcss scriptlist=loadscript menu="${params.packag
         </div>
     </div>
 </section>
-${r"</@mincoo.html> "}
+${r"</@main.html> "}

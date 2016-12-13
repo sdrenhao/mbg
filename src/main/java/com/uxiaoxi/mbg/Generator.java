@@ -34,24 +34,24 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("test",""));
+        list.add(new TableParams("member_user",""));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.uxiaoxi.pft.appserver");
-        info.setPackageName("test");
-        String project = "bjg-security";
+        info.setBasePackage("com.bjg.web");
+        info.setPackageName("user");
+        String project = "bjg-web";
         info.setPath("E:\\eclipse_workspace\\bjg\\bjg-root\\" + project);
 //        info.setPrePath("");
 //        info.setPageName("前台显示");
 //        info.setGridWidth(6);
 
-         info.getIgnoreList().add("controller");
+//         info.getIgnoreList().add("controller");
 //         info.getIgnoreList().add("dao");
-         info.getIgnoreList().add("html");
-         info.getIgnoreList().add("js");
-         info.getIgnoreList().add("service");
+//         info.getIgnoreList().add("html");
+//         info.getIgnoreList().add("js");
+//         info.getIgnoreList().add("service");
          info.getIgnoreList().add("api");
 
         // api请求路径，生成api的时候有用
@@ -64,6 +64,17 @@ public class Generator {
             TableInfo tinfo = new TableInfo(tname.getTableName(), tname.getOmitPrefix());
             tableList.add(tinfo);
         }
+        
+        Map<String,String> packageMap = new HashMap<String,String>();
+        
+        packageMap.put("Page", "com.bjg.core.page.model.Page");
+        packageMap.put("JqPrmNames", "com.bjg.core.common.vo.JqPrmNames");
+        packageMap.put("ResultBean", "com.bjg.core.common.vo.ResultBean");
+        packageMap.put("SqlBean", "com.bjg.core.common.vo.SqlBean");
+        packageMap.put("BaseSupport", "com.bjg.core.db.impl.BaseSupport");
+        packageMap.put("IBaseSupport", "com.bjg.core.db.IBaseSupport");
+        
+        info.setPackageMap(packageMap);
 
         for (TableInfo ti : tableList) {
 

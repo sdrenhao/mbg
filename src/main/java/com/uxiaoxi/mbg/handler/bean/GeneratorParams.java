@@ -51,6 +51,9 @@ public class GeneratorParams {
      */
     private List<String> reqPathList;
     
+    
+    private Map<String,String> packageMap;
+    
 
     public GeneratorParams (){
     	
@@ -150,6 +153,16 @@ public class GeneratorParams {
 	public void setReqPathList(List<String> reqPathList) {
 		this.reqPathList = reqPathList;
 	}
+
+
+    public Map<String, String> getPackageMap() {
+        return packageMap;
+    }
+
+
+    public void setPackageMap(Map<String, String> packageMap) {
+        this.packageMap = packageMap;
+    }
 
 
     

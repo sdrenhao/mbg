@@ -4,9 +4,9 @@
 package ${params.basePackage}.biz.${params.packageName};
 
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
-import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.framework.common.vo.ResultBean;
-import ${params.basePackage}.framework.common.vo.SqlBean;
+import ${params.packageMap["Page"]};
+import ${params.packageMap["ResultBean"]};
+import ${params.packageMap["SqlBean"]};
 
 
 /**

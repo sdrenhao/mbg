@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import ${params.basePackage}.biz.${params.packageName}.I${table.camelNameU}Service;
 import ${params.basePackage}.db.${params.packageName}.dao.I${table.camelNameU}Dao;
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
-import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.framework.common.vo.ResultBean;
-import ${params.basePackage}.framework.common.vo.SqlBean;
+import ${params.packageMap["Page"]};
+import ${params.packageMap["ResultBean"]};
+import ${params.packageMap["SqlBean"]};
 
 /**
  * @author mbg

@@ -4,9 +4,9 @@
 package ${params.basePackage}.db.${params.packageName}.dao;
 
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
-import ${params.basePackage}.framework.db.IBaseSupport;
-import ${params.basePackage}.framework.page.model.Page;
-import ${params.basePackage}.framework.common.vo.SqlBean;
+import ${params.packageMap["IBaseSupport"]};
+import ${params.packageMap["Page"]};
+import ${params.packageMap["SqlBean"]};
 
 /**
  * @author mbg
