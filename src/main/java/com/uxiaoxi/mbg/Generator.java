@@ -42,16 +42,16 @@ public class Generator {
         info.setBasePackage("com.bjg.web");
         info.setPackageName("user");
         String project = "bjg-web";
-        info.setPath("E:\\eclipse_workspace\\bjg\\bjg-root\\" + project);
+        info.setPath("E:\\svns\\banjiagou\\source\\bjg-root\\" + project);
 //        info.setPrePath("");
 //        info.setPageName("前台显示");
 //        info.setGridWidth(6);
 
-//         info.getIgnoreList().add("controller");
+         info.getIgnoreList().add("controller");
 //         info.getIgnoreList().add("dao");
-//         info.getIgnoreList().add("html");
-//         info.getIgnoreList().add("js");
-//         info.getIgnoreList().add("service");
+         info.getIgnoreList().add("html");
+         info.getIgnoreList().add("js");
+         info.getIgnoreList().add("service");
          info.getIgnoreList().add("api");
 
         // api请求路径，生成api的时候有用
