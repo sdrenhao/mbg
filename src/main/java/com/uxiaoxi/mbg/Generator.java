@@ -34,24 +34,24 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("member_user",""));
+        list.add(new TableParams("exchange_codes","",true));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
         info.setBasePackage("com.bjg.web");
-        info.setPackageName("user");
+        info.setPackageName("order");
         String project = "bjg-web";
         info.setPath("E:\\svns\\banjiagou\\source\\bjg-root\\" + project);
-//        info.setPrePath("");
-//        info.setPageName("前台显示");
+        info.setPrePath("/admin");
+        info.setPageName("兑换码管理");
 //        info.setGridWidth(6);
-
-         info.getIgnoreList().add("controller");
+//
+//         info.getIgnoreList().add("controller");
 //         info.getIgnoreList().add("dao");
-         info.getIgnoreList().add("html");
-         info.getIgnoreList().add("js");
-         info.getIgnoreList().add("service");
+//         info.getIgnoreList().add("html");
+//         info.getIgnoreList().add("js");
+//         info.getIgnoreList().add("service");
          info.getIgnoreList().add("api");
 
         // api请求路径，生成api的时候有用
@@ -61,7 +61,7 @@ public class Generator {
 
         List<TableInfo> tableList = new ArrayList<TableInfo>();
         for (TableParams tname : list) {
-            TableInfo tinfo = new TableInfo(tname.getTableName(), tname.getOmitPrefix());
+            TableInfo tinfo = new TableInfo(tname.getTableName(), tname.getOmitPrefix(), tname.isRemoveEndS());
             tableList.add(tinfo);
         }
         

@@ -22,10 +22,10 @@ public class TableInfo {
 
     }
 
-    public TableInfo(String tableName, String omitPrefix) {
+    public TableInfo(String tableName, String omitPrefix, boolean removeEndS) {
         this.tableName = tableName;
-        this.camelNameU = CommonUtil.camelNameOmitPrefix(tableName, false, omitPrefix);
-        this.camelNameL = CommonUtil.camelNameOmitPrefix(tableName, true, omitPrefix);
+        this.camelNameU = CommonUtil.camelNameOmitPrefix(tableName, false, omitPrefix,removeEndS);
+        this.camelNameL = CommonUtil.camelNameOmitPrefix(tableName, true, omitPrefix,removeEndS);
     }
 
     /**

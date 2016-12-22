@@ -85,7 +85,7 @@ public class CommonUtil {
      * @param fistLower
      * @return
      */
-    public static String camelNameOmitPrefix(String name, boolean fistLower, String omitPrefix) {
+    public static String camelNameOmitPrefix(String name, boolean fistLower, String omitPrefix, boolean removeEndS) {
         StringBuilder result = new StringBuilder();
         if (name == null || name.isEmpty()) {
             return "";
@@ -97,7 +97,14 @@ public class CommonUtil {
                 name = name.replaceFirst(omitPrefix, "");
             }
         }
-
+        
+        // 是否去掉末尾的S
+        if(removeEndS) {
+            if(name.endsWith("s")) {
+                name = name.substring(0,name.length() - 1);
+            }
+        }
+        
         // 不含下划线，仅将首字母小写
         if (!name.contains("_")) {
             if (fistLower) {

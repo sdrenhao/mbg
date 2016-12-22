@@ -98,7 +98,7 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
     }
 
     private void xmlPageMethod(GeneratorParams params, TableInfo ti, Map<String, Object> map) {
-        String fileString = templateService.getHtmlText(XMLPAGEMETHOD_TEMPLATE_NAME, map);
+        String fileString =  templateService.getHtmlText(XMLPAGEMETHOD_TEMPLATE_NAME, map);
         RandomAccessFile raf = null;
         try {
             raf = new RandomAccessFile(getXmlFileName(params, ti), "rw");
@@ -126,7 +126,7 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
             }
 
             if (null == startLinePos || null == endLinePos) {
-                startLinePos = raf.length() - 10l;
+                startLinePos = raf.length() - 9l;
                 endLinePos = startLinePos;
             }
             
