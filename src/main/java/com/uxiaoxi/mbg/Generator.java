@@ -34,17 +34,17 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("exchange_codes","",true));
+        list.add(new TableParams("**","",true));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.bjg.web");
-        info.setPackageName("order");
-        String project = "bjg-web";
-        info.setPath("E:\\svns\\banjiagou\\source\\bjg-root\\" + project);
+        info.setBasePackage("com.mincoo.mpa");
+        info.setPackageName("***");
+        String project = "mpa-web";
+        info.setPath("E:\\git\\mpa\\mpa-parent\\" + project);
         info.setPrePath("/admin");
-        info.setPageName("兑换码管理");
+        info.setPageName("系统用户管理");
 //        info.setGridWidth(6);
 //
 //         info.getIgnoreList().add("controller");
@@ -67,12 +67,12 @@ public class Generator {
         
         Map<String,String> packageMap = new HashMap<String,String>();
         
-        packageMap.put("Page", "com.bjg.core.page.model.Page");
-        packageMap.put("JqPrmNames", "com.bjg.core.common.vo.JqPrmNames");
-        packageMap.put("ResultBean", "com.bjg.core.common.vo.ResultBean");
-        packageMap.put("SqlBean", "com.bjg.core.common.vo.SqlBean");
-        packageMap.put("BaseSupport", "com.bjg.core.db.impl.BaseSupport");
-        packageMap.put("IBaseSupport", "com.bjg.core.db.IBaseSupport");
+        packageMap.put("Page", "com.mincoo.core.page.model.Page");
+        packageMap.put("JqPrmNames", "com.mincoo.core.common.vo.JqPrmNames");
+        packageMap.put("ResultBean", "com.mincoo.core.common.vo.ResultBean");
+        packageMap.put("SqlBean", "com.mincoo.core.common.vo.SqlBean");
+        packageMap.put("BaseSupport", "com.mincoo.core.db.impl.BaseSupport");
+        packageMap.put("IBaseSupport", "com.mincoo.core.db.IBaseSupport");
         
         info.setPackageMap(packageMap);
 

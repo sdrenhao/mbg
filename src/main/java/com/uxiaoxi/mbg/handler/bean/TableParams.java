@@ -9,6 +9,12 @@ package com.uxiaoxi.mbg.handler.bean;
  */
 public class TableParams {
 
+    private String tableName;// 表名
+
+    private String omitPrefix;// 省略
+    
+    private boolean removeEndS;// 去掉末尾的S
+    
     public TableParams(String tableName) {
         super();
         this.tableName = tableName;
@@ -28,12 +34,6 @@ public class TableParams {
         this.omitPrefix = omitPrefix;
         this.removeEndS = false;
     }
-
-    private String tableName;// 表名
-
-    private String omitPrefix;// 省略
-    
-    private boolean removeEndS;// 去掉末尾的S
 
     public String getTableName() {
         return tableName;
