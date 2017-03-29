@@ -34,17 +34,17 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("**","",true));
+        list.add(new TableParams("naisi_trade","",false));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.mincoo.mpa");
-        info.setPackageName("***");
-        String project = "mpa-web";
-        info.setPath("E:\\git\\mpa\\mpa-parent\\" + project);
+        info.setBasePackage("com.mincoo.naisi");
+        info.setPackageName("pay");
+        String project = "naisi-web";
+        info.setPath("E:\\git\\naisi\\naisi-parent\\" + project);
         info.setPrePath("/admin");
-        info.setPageName("系统用户管理");
+        info.setPageName("交易管理");
 //        info.setGridWidth(6);
 //
 //         info.getIgnoreList().add("controller");
