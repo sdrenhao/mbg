@@ -34,17 +34,17 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("naisi_trade","",false));
+        list.add(new TableParams("xmt_weibo","",false));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.mincoo.naisi");
+        info.setBasePackage("com.mincoo.xmt");
         info.setPackageName("pay");
-        String project = "naisi-web";
-        info.setPath("E:\\git\\naisi\\naisi-parent\\" + project);
+        String project = "xmt-web";
+        info.setPath("E:\\git\\xmt\\xmt-parent\\" + project);
         info.setPrePath("/admin");
-        info.setPageName("交易管理");
+        info.setPageName("微博");
 //        info.setGridWidth(6);
 //
 //         info.getIgnoreList().add("controller");
