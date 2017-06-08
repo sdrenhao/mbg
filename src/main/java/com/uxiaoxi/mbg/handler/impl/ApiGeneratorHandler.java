@@ -57,11 +57,11 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
         LOG.debug("开始生成controller");
         create(params, ti, map);
         
-//        LOG.debug("开始生成formbean");
-//        createFormBean(params, ti, map);
+        LOG.debug("开始生成formbean");
+        createFormBean(params, ti, map);
 //
-//        LOG.debug("开始生成vo");
-//        createVO(params, ti, map);
+        LOG.debug("开始生成vo");
+        createVO(params, ti, map);
         
         LOG.debug("controller generator end.");
     }
