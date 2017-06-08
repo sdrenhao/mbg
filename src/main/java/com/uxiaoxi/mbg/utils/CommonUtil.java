@@ -6,7 +6,8 @@ package com.uxiaoxi.mbg.utils;
 import java.io.File;
 import java.util.regex.Matcher;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+
 
 /**
  * @author renh
