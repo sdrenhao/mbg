@@ -67,12 +67,12 @@ public class Generator {
         
         Map<String,String> packageMap = new HashMap<String,String>();
         
-        packageMap.put("Page", "com.mincoo.core.page.model.Page");
-        packageMap.put("JqPrmNames", "com.mincoo.core.common.vo.JqPrmNames");
-        packageMap.put("ResultBean", "com.mincoo.core.common.vo.ResultBean");
-        packageMap.put("SqlBean", "com.mincoo.core.common.vo.SqlBean");
-        packageMap.put("BaseSupport", "com.mincoo.core.db.impl.BaseSupport");
-        packageMap.put("IBaseSupport", "com.mincoo.core.db.IBaseSupport");
+        packageMap.put("Page", "com.mincoo.framework.page.model.Page");
+        packageMap.put("JqPrmNames", "com.mincoo.framework.common.vo.JqPrmNames");
+        packageMap.put("ResultBean", "com.mincoo.framework.common.vo.ResultBean");
+        packageMap.put("SqlBean", "com.mincoo.framework.common.vo.SqlBean");
+        packageMap.put("BaseSupport", "com.mincoo.framework.db.impl.BaseSupport");
+        packageMap.put("IBaseSupport", "com.mincoo.framework.db.IBaseSupport");
         
         info.setPackageMap(packageMap);
 
