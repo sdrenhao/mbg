@@ -4,6 +4,7 @@
 package ${params.basePackage}.biz.${params.packageName};
 
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
+import ${params.packageMap["SecurityUser"]};
 import ${params.packageMap["Page"]};
 import ${params.packageMap["ResultBean"]};
 import ${params.packageMap["SqlBean"]};
@@ -29,19 +30,19 @@ public interface I${table.camelNameU}Service {
      * @param id
      * @return
      */
-    public ResultBean del(Long id);
+    public ResultBean del(Long id, SecurityUser currentUser);
 
     /**
      * @param local
      * @return
      */
-    public ResultBean add(${table.camelNameU} ${table.camelNameL});
+    public ResultBean add(${table.camelNameU} ${table.camelNameL}, SecurityUser currentUser);
 
     /**
      * @param local
      * @return
      */
-    public ResultBean edit(${table.camelNameU} ${table.camelNameL});
+    public ResultBean edit(${table.camelNameU} ${table.camelNameL}, SecurityUser currentUser);
 
 
 }

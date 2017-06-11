@@ -4,8 +4,10 @@
 package com.uxiaoxi.mbg.handler.bean;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author renhao
@@ -14,7 +16,25 @@ import java.util.Map;
  */
 public class GeneratorParams {
     
+    /**
+     * parent项目路径
+     */
     private String path;
+    
+    /**
+     * dao项目路径
+     */
+    private String daoPath;
+    
+    /**
+     * service项目路径
+     */
+    private String servicePath;
+    
+    /**
+     * web项目路径
+     */
+    private String webPath;
     
     /**
      * 基础包名
@@ -44,7 +64,9 @@ public class GeneratorParams {
     /**
      * 忽略列表
      */
-    private List<String> ignoreList;
+//    private List<String> ignoreList;
+    
+    private Set<String> queueSet;
     
     /**
      * api的请求地址
@@ -58,7 +80,8 @@ public class GeneratorParams {
     public GeneratorParams (){
     	
     	gridWidth = 12;
-    	ignoreList = new ArrayList<String>();
+//    	ignoreList = new ArrayList<String>();
+    	queueSet = new HashSet<String>();
     }
     
 
@@ -135,14 +158,14 @@ public class GeneratorParams {
 	}
 
 
-	public List<String> getIgnoreList() {
-		return ignoreList;
-	}
-
-
-	public void setIgnoreList(List<String> ignoreList) {
-		this.ignoreList = ignoreList;
-	}
+//	public List<String> getIgnoreList() {
+//		return ignoreList;
+//	}
+//
+//
+//	public void setIgnoreList(List<String> ignoreList) {
+//		this.ignoreList = ignoreList;
+//	}
 
 
 	public List<String> getReqPathList() {
@@ -162,6 +185,70 @@ public class GeneratorParams {
 
     public void setPackageMap(Map<String, String> packageMap) {
         this.packageMap = packageMap;
+    }
+
+
+    /**
+     * @return the daoPath
+     */
+    public String getDaoPath() {
+        return daoPath;
+    }
+
+
+    /**
+     * @param daoPath the daoPath to set
+     */
+    public void setDaoPath(String daoPath) {
+        this.daoPath = daoPath;
+    }
+
+
+    /**
+     * @return the servicePath
+     */
+    public String getServicePath() {
+        return servicePath;
+    }
+
+
+    /**
+     * @param servicePath the servicePath to set
+     */
+    public void setServicePath(String servicePath) {
+        this.servicePath = servicePath;
+    }
+
+
+    /**
+     * @return the webPath
+     */
+    public String getWebPath() {
+        return webPath;
+    }
+
+
+    /**
+     * @param webPath the webPath to set
+     */
+    public void setWebPath(String webPath) {
+        this.webPath = webPath;
+    }
+
+
+    /**
+     * @return the queueSet
+     */
+    public Set<String> getQueueSet() {
+        return queueSet;
+    }
+
+
+    /**
+     * @param queueSet the queueSet to set
+     */
+    public void setQueueSet(Set<String> queueSet) {
+        this.queueSet = queueSet;
     }
 
 

@@ -1,6 +1,8 @@
 <#import "/lib/camel.ftl" as uxiaoxi> 
 $(function() {
 
+    $.jgrid.defaults.width = $("#list_id").width();
+    $.jgrid.defaults.responsive = true;
     $.jgrid.defaults.styleUI = 'Bootstrap';
     
     $('#list').jqGrid({
@@ -85,9 +87,10 @@ $(function() {
     $(window).bind('resize', function() {
         resizeTable();
     });
-
-    $("#leftmenu-trigger").bind('click', function() {
-        resizeTable();
+    
+    $(".nav a").bind('click', function() {
+        setTimeout(function(){  resizeTable(); }, 0);
+        
     });
 
     function resizeTable() {

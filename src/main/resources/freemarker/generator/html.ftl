@@ -1,24 +1,24 @@
-${r"<#import"} "/lib/html.html" as main> 
+${r"<#import"} "/lib/main.html" as main> 
 ${r"<#assign"} loadcss=[] > 
 ${r"<#assign"} loadscript=["/js/util/utils.js","/js/${params.packageName}/${table.camelNameL}.js"] > 
 ${r"<@main.html "} csslist=loadcss scriptlist=loadscript menu="${params.packageName}" submenu="${table.tableName}">
 
-<!-- Content Header -->
-<section class="content-header">
-    <h1>Demos<small>Jqgrid</small></h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Demos</li>
-    </ol>
-</section>
-
-<!-- Main content -->
-<section class="content">
-     <div class="row">
-        <div class="col-md-${params.gridWidth!"12"}" id="list_id">
-            <table id="list"></table>
-            <div id="pager"></div>
-        </div>
-    </div>
-</section>
+      <div class="app-content-body fade-in-up">
+          <div class="app-content-title">
+              <h1 class="font-thin">${params.pageName!""}</h1>
+          </div>
+          <div class="wrapper-md">
+              <div class="row">
+                  <div class="col-md-${params.gridWidth!"12"}" id="list_id">
+                      <div class="jqbox">
+                          <table id="list"></table>
+                          <div id="pager"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+    
+    
 ${r"</@main.html> "}

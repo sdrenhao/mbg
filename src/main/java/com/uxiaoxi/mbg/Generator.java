@@ -34,25 +34,28 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("xmt_weixin","xmt_",false));
+        list.add(new TableParams("unisedu_megagame_category","unisedu_",false));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.mincoo.xmt");
-        info.setPackageName("weixin");
-        String project = "xmt-web";
-        info.setPath("E:\\git\\xmt\\xmt-parent\\" + project);
+        info.setBasePackage("com.unisedu.megagame");
+        info.setPackageName("megagame");
+        info.setPath("E:\\git\\unisedu\\codes\\unisedu-parent\\");
+        info.setDaoPath(info.getPath()+"unisedu-megagame-dao");
+        info.setServicePath(info.getPath()+"unisedu-megagame-service");
+        info.setWebPath(info.getPath()+"unisedu-megagame-web");
+        
         info.setPrePath("/admin");
-        info.setPageName("公众号");
-//        info.setGridWidth(6);
+        info.setPageName("大赛类别管理");
+        info.setGridWidth(6);
 //
-//         info.getIgnoreList().add("controller");
-//         info.getIgnoreList().add("dao");
-//         info.getIgnoreList().add("html");
-//         info.getIgnoreList().add("js");
-//         info.getIgnoreList().add("service");
-         info.getIgnoreList().add("api");
+         info.getQueueSet().add("controller");
+         info.getQueueSet().add("dao");
+         info.getQueueSet().add("html");
+         info.getQueueSet().add("js");
+         info.getQueueSet().add("service");
+//         info.getQueueSet().add("api");
 
         // api请求路径，生成api的时候有用
         List<String> reqPathList = new ArrayList<String>();
@@ -73,6 +76,7 @@ public class Generator {
         packageMap.put("SqlBean", "com.mincoo.framework.common.vo.SqlBean");
         packageMap.put("BaseSupport", "com.mincoo.framework.db.impl.BaseSupport");
         packageMap.put("IBaseSupport", "com.mincoo.framework.db.IBaseSupport");
+        packageMap.put("SecurityUser", "com.unisedu.security.mdoel.SecurityUser");
         
         info.setPackageMap(packageMap);
 
@@ -84,8 +88,8 @@ public class Generator {
                 for (String beanName : beanNames) {
                     IGeneratorHandler handler = (IGeneratorHandler) ctx.getBean(beanName);
 
-                    // 如果在忽略列表里则不生成
-                    if (!info.getIgnoreList().contains(handler.getName())) {
+                    // 如果在列表里则生成
+                    if (info.getQueueSet().contains(handler.getName())) {
                         handler.generator(info, ti);
                     }
                 }

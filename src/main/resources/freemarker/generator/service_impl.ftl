@@ -3,12 +3,15 @@
  */
 package ${params.basePackage}.biz.${params.packageName}.impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ${params.basePackage}.biz.${params.packageName}.I${table.camelNameU}Service;
 import ${params.basePackage}.db.${params.packageName}.dao.I${table.camelNameU}Dao;
 import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
+import ${params.packageMap["SecurityUser"]};
 import ${params.packageMap["Page"]};
 import ${params.packageMap["ResultBean"]};
 import ${params.packageMap["SqlBean"]};
@@ -31,17 +34,27 @@ public class ${table.camelNameU}ServiceImpl implements I${table.camelNameU}Servi
     }
 
     @Override
-    public ResultBean del(Long id) {
+    public ResultBean del(Long id, SecurityUser currentUser) {
         return ${table.camelNameL}Dao.deleteByPrimaryKey(id);
     }
 
     @Override
-    public ResultBean add(${table.camelNameU} ${table.camelNameL}) {
-        return ${table.camelNameL}Dao.insert(${table.camelNameL});
+    public ResultBean add(${table.camelNameU} ${table.camelNameL}, SecurityUser currentUser) {
+        Date nowtime = new Date();
+        ${table.camelNameL}.setCreateAt(nowtime);
+        ${table.camelNameL}.setCreateBy(currentUser.getId());
+        ${table.camelNameL}.setUpdateAt(nowtime);
+        ${table.camelNameL}.setUpdateBy(currentUser.getId());
+        ${table.camelNameL}.setUseYn(true);
+        return ${table.camelNameL}Dao.insertSelective(${table.camelNameL});
     }
 
     @Override
-    public ResultBean edit(${table.camelNameU} ${table.camelNameL}) {
+    public ResultBean edit(${table.camelNameU} ${table.camelNameL}, SecurityUser currentUser) {
+        Date nowtime = new Date();
+        ${table.camelNameL}.setCreateAt(nowtime);
+        ${table.camelNameL}.setUpdateBy(currentUser.getId());
+        ${table.camelNameL}.setUseYn(true);
         return ${table.camelNameL}Dao.updateByPrimaryKeySelective(${table.camelNameL});
     }
 

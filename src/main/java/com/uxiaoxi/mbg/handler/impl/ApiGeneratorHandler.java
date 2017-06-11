@@ -171,14 +171,14 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getPath(), params.getBasePackage()) + File.separator
+        return getPath(params.getWebPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator 
                 + "controller" + File.separator
                 + getName(ti.getCamelNameU());
     }
     
     private String getFormBeanFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getPath(), params.getBasePackage()) + File.separator
+        return getPath(params.getWebPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator 
                 + "formbean" + File.separator 
                 + getFormBeanName(ti.getCamelNameU(),params);
@@ -186,7 +186,7 @@ public class ApiGeneratorHandler implements IGeneratorHandler {
     
     
     private String getVOFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getPath(), params.getBasePackage()) + File.separator
+        return getPath(params.getWebPath(), params.getBasePackage()) + File.separator
                 + params.getPackageName() + File.separator 
                 + "vo" + File.separator 
                 + getVOName(ti.getCamelNameU(),params);
