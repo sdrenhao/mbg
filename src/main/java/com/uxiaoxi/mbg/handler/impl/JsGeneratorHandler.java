@@ -34,7 +34,7 @@ import com.uxiaoxi.mbg.utils.CommonUtil;
 public class JsGeneratorHandler implements IGeneratorHandler {
 
     private Logger LOG = LoggerFactory.getLogger(JsGeneratorHandler.class);
-    
+
     private final static String NAME = "js";
 
     @Autowired
@@ -46,8 +46,7 @@ public class JsGeneratorHandler implements IGeneratorHandler {
     private static final String TEMPLATE_NAME = "generator/js.ftl";
 
     @Override
-    public void generator(GeneratorParams params, TableInfo ti)
-            throws IOException {
+    public void generator(GeneratorParams params, TableInfo ti) throws IOException {
 
         LOG.debug("controller generator exec.");
 
@@ -62,29 +61,27 @@ public class JsGeneratorHandler implements IGeneratorHandler {
         LOG.debug("js generator end.");
     }
 
-    private void create(GeneratorParams params, TableInfo ti,
-            Map<String, Object> map) throws IOException {
+    private void create(GeneratorParams params, TableInfo ti, Map<String, Object> map) throws IOException {
         String sql = "SHOW FULL FIELDS FROM " + ti.getTableName();
         List<TableField> list = jdbcTemplate.query(sql, new FiledsMapper());
         map.put("tableFieldList", list);
-        
-        for(TableField tf : list) {
-        	String comment = tf.getComment();
-        	if(StringUtils.contains(tf.getComment(), "hidden")) {
-        		tf.setHiddenState(true);
-        	}
-        	
-        	// 将注释里的“{” 删除掉
-        	if(comment.indexOf("{") > -1) {
-        		tf.setComment(comment.substring(0, comment.indexOf("{")));
-        	}
+
+        for (TableField tf : list) {
+            String comment = tf.getComment();
+            if (StringUtils.contains(tf.getComment(), "hidden")) {
+                tf.setHiddenState(true);
+            }
+
+            // 将注释里的“{” 删除掉
+            if (comment.indexOf("{") > -1) {
+                tf.setComment(comment.substring(0, comment.indexOf("{")));
+            }
         }
 
         String fileString = templateService.getHtmlText(TEMPLATE_NAME, map);
         File file = new File(getFileName(params, ti));
         FileUtils.writeStringToFile(file, fileString);
         LOG.debug("Filename = " + file.getAbsolutePath());
-
     }
 
     private String getName(String camelName) {
@@ -96,15 +93,13 @@ public class JsGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getFileName(GeneratorParams params, TableInfo ti) {
-        return getPath(params.getWebPath())  + File.separator
-                + params.getPackageName() + File.separator
+        return getPath(params.getWebPath()) + File.separator + params.getPackageName() + File.separator
                 + getName(ti.getCamelNameL());
     }
-    
 
-	@Override
-	public String getName() {
-		return NAME;
-	}
-	
+    @Override
+    public String getName() {
+        return NAME;
+    }
+
 }

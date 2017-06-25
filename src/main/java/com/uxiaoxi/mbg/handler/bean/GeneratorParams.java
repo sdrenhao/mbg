@@ -46,21 +46,6 @@ public class GeneratorParams {
     private String packageName;
     
     /**
-     * url前缀
-     */
-    private String prePath;
-    
-    /**
-     * 页面名称
-     */
-    private String pageName;
-    
-    /**
-     * 生成的grid的宽度，采用bootstrap的栅格系统
-     */
-    private Integer gridWidth;
-    
-    /**
      * 忽略列表
      */
 //    private List<String> ignoreList;
@@ -78,7 +63,6 @@ public class GeneratorParams {
 
     public GeneratorParams (){
     	
-    	gridWidth = 12;
 //    	ignoreList = new ArrayList<String>();
     	queueSet = new HashSet<String>();
     }
@@ -125,37 +109,6 @@ public class GeneratorParams {
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
-
-
-	public String getPrePath() {
-		return prePath;
-	}
-
-
-	public void setPrePath(String prePath) {
-		this.prePath = prePath;
-	}
-
-
-	public String getPageName() {
-		return pageName;
-	}
-
-
-	public void setPageName(String pageName) {
-		this.pageName = pageName;
-	}
-
-
-	public Integer getGridWidth() {
-		return gridWidth;
-	}
-
-
-	public void setGridWidth(Integer gridWidth) {
-		this.gridWidth = gridWidth;
-	}
-
 
 //	public List<String> getIgnoreList() {
 //		return ignoreList;

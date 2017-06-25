@@ -22,7 +22,7 @@ import ${params.packageMap["ResultBean"]};
  * ${.now?date}
  */
 @Controller
-@RequestMapping("${params.prePath!""}/${params.packageName}")
+@RequestMapping("${table.prePath!""}/${params.packageName}")
 public class ${table.camelNameU}Controller {
     
     @Autowired

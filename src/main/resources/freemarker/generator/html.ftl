@@ -5,11 +5,11 @@ ${r"<@main.html "} csslist=loadcss scriptlist=loadscript menu="${params.packageN
 
       <div class="app-content-body fade-in-up">
           <div class="app-content-title">
-              <h1 class="font-thin">${params.pageName!""}</h1>
+              <h1 class="font-thin">${table.pageName!""}</h1>
           </div>
           <div class="wrapper-md">
               <div class="row">
-                  <div class="col-md-${params.gridWidth!"12"}" id="list_id">
+                  <div class="col-md-${table.gridWidth!"12"}" id="list_id">
                       <div class="jqbox">
                           <table id="list"></table>
                           <div id="pager"></div>

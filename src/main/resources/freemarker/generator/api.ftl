@@ -21,7 +21,7 @@ import ${params.packageMap["ResResult"]};
  * ${.now?date}
  */
 @Controller
-@RequestMapping("${params.prePath!""}/${params.packageName}")
+@RequestMapping("${table.prePath!""}/${params.packageName}")
 public class ${table.camelNameU}ApiController {
     
     @Autowired

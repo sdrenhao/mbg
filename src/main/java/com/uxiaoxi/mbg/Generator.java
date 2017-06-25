@@ -34,22 +34,21 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("unisedu_megagame_campers","unisedu_",true));
+        list.add(new TableParams("unisedu_megagame_class","unisedu_",false,"/admin","班级管理",12));
+        list.add(new TableParams("unisedu_megagame_class_type","unisedu_",false,"/admin","班级分类",12));
+        list.add(new TableParams("unisedu_megagame_class_teacher","unisedu_",false,"/admin","班主任",12));
+        list.add(new TableParams("unisedu_megagame_teacher_resources","unisedu_",true,"/admin","班主任管理",12));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
         info.setBasePackage("com.unisedu.megagame");
-        info.setPackageName("camper");
+        info.setPackageName("megaclass");
         info.setPath("E:\\git\\unisedu\\codes\\unisedu-parent\\");
         info.setDaoPath(info.getPath()+"unisedu-megagame-dao");
         info.setServicePath(info.getPath()+"unisedu-megagame-service");
         info.setWebPath(info.getPath()+"unisedu-megagame-web");
         
-        info.setPrePath("/admin");
-        info.setPageName("营员信息");
-        info.setGridWidth(12);
-//
          info.getQueueSet().add("controller");
          info.getQueueSet().add("dao");
          info.getQueueSet().add("html");
