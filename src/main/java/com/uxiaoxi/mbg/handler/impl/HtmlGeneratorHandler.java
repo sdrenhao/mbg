@@ -73,7 +73,7 @@ public class HtmlGeneratorHandler implements IGeneratorHandler {
 
     private String getFileName(GeneratorParams params, TableInfo ti) {
         return getPath(params.getWebPath()) + File.separator
-                + params.getPackageName() + File.separator
+                + ti.getParams().getPackageName() + File.separator
                 + getName(ti.getCamelNameL());
     }
 

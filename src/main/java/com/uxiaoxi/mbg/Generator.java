@@ -34,16 +34,16 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("unisedu_megagame_class","unisedu_",false,"/admin","班级管理",12));
-        list.add(new TableParams("unisedu_megagame_class_type","unisedu_",false,"/admin","班级分类",12));
-        list.add(new TableParams("unisedu_megagame_class_teacher","unisedu_",false,"/admin","班主任",12));
-        list.add(new TableParams("unisedu_megagame_teacher_resources","unisedu_",true,"/admin","班主任管理",12));
+        list.add(new TableParams("unisedu_megagame_class","megaclass","unisedu_",false,"/admin","班级管理",12));
+        list.add(new TableParams("unisedu_megagame_class_type","megaclass","unisedu_",false,"/admin","班级分类",12));
+        list.add(new TableParams("unisedu_megagame_class_teacher","megaclass","unisedu_",false,"/admin","班主任",12));
+        list.add(new TableParams("unisedu_megagame_teacher_resources","megaclass","unisedu_",true,"/admin","班主任管理",12));
 
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
         info.setBasePackage("com.unisedu.megagame");
-        info.setPackageName("megaclass");
+//        info.setPackageName("megaclass");
         info.setPath("E:\\git\\unisedu\\codes\\unisedu-parent\\");
         info.setDaoPath(info.getPath()+"unisedu-megagame-dao");
         info.setServicePath(info.getPath()+"unisedu-megagame-service");
@@ -63,7 +63,7 @@ public class Generator {
 
         List<TableInfo> tableList = new ArrayList<TableInfo>();
         for (TableParams tname : list) {
-            TableInfo tinfo = new TableInfo(tname.getTableName(), tname.getOmitPrefix(), tname.isRemoveEndS());
+            TableInfo tinfo = new TableInfo(tname);
             tableList.add(tinfo);
         }
         

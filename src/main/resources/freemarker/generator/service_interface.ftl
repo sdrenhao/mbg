@@ -1,9 +1,9 @@
 /**
  * I${table.camelNameU}Service.java
  */
-package ${params.basePackage}.biz.${params.packageName};
+package ${params.basePackage}.biz.${table.params.packageName};
 
-import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
+import ${params.basePackage}.db.${table.params.packageName}.dto.${table.camelNameU};
 import ${params.packageMap["SecurityUser"]};
 import ${params.packageMap["Page"]};
 import ${params.packageMap["ResultBean"]};

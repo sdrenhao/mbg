@@ -6,7 +6,7 @@ $(function() {
     $.jgrid.defaults.styleUI = 'Bootstrap';
     
     $('#list').jqGrid({
-        url : '${table.prePath!""}/${params.packageName}/${table.tableName}/data',
+        url : '${table.params.prePath!""}/${table.params.packageName}/${table.tableName}/data',
         datatype : 'json',
         mtype : 'POST',
         autowidth : true,
@@ -25,7 +25,7 @@ $(function() {
         ],
         ondblClickRow : function(id) {
                     jQuery(this).editGridRow(id, {
-                        url : '${table.prePath!""}/${params.packageName}/${table.tableName}/edit',
+                        url : '${table.params.prePath!""}/${table.params.packageName}/${table.tableName}/edit',
                         closeAfterEdit : true,
                         closeOnEscape : true
                     });
@@ -47,8 +47,8 @@ $(function() {
         sortname : '${tableFieldList?first.field}',
         viewrecords : true,
         sortorder : 'desc',
-        editurl : '${table.prePath!""}/${params.packageName}/${table.tableName}/edit',
-        caption : '${table.pageName!""}'
+        editurl : '${table.params.prePath!""}/${table.params.packageName}/${table.tableName}/edit',
+        caption : '${table.params.pageName!""}'
     });
     $('#list').jqGrid(
             'navGrid',
@@ -59,18 +59,18 @@ $(function() {
                 del : true
             },
             {
-                url : '${table.prePath!""}/${params.packageName}/${table.tableName}/edit',
+                url : '${table.params.prePath!""}/${table.params.packageName}/${table.tableName}/edit',
                 closeAfterEdit : true,
                 closeOnEscape : true
             },
             {
-                url : '${table.prePath!""}/${params.packageName}/${table.tableName}/add',
+                url : '${table.params.prePath!""}/${table.params.packageName}/${table.tableName}/add',
                 closeAfterAdd : true,
                 clearAfterAdd : true,
                 closeOnEscape : true
             },
             {
-                url : '${table.prePath!""}/${params.packageName}/${table.tableName}/del',
+                url : '${table.params.prePath!""}/${table.params.packageName}/${table.tableName}/del',
                 closeOnEscape : true
             },
             {

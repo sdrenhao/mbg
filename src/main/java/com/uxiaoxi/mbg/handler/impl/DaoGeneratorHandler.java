@@ -93,7 +93,7 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getFileName(GeneratorParams params, TableInfo ti, String name) {
-        return getPath(params.getDaoPath(), params.getBasePackage()) + File.separator + params.getPackageName()
+        return getPath(params.getDaoPath(), params.getBasePackage()) + File.separator + ti.getParams().getPackageName()
                 + File.separator + "dao" + File.separator + name;
     }
 
@@ -154,7 +154,7 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
     private String getXmlFileName(GeneratorParams params, TableInfo ti) {
 
         return params.getDaoPath()+ File.separator + CommonUtil.javaBasePath(params.getBasePackage()) + File.separator
-                + "db" + File.separator + params.getPackageName() + File.separator + "mapper" + File.separator
+                + "db" + File.separator + ti.getParams().getPackageName() + File.separator + "mapper" + File.separator
                 + ti.getCamelNameU() + "Mapper.xml";
 
         // return params.getPath() + File.separator + CommonUtil.xmlBasePath()

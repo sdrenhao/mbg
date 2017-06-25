@@ -1,16 +1,16 @@
 /**
  * ${table.camelNameU}ServiceImpl.java
  */
-package ${params.basePackage}.biz.${params.packageName}.impl;
+package ${params.basePackage}.biz.${table.params.packageName}.impl;
 
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ${params.basePackage}.biz.${params.packageName}.I${table.camelNameU}Service;
-import ${params.basePackage}.db.${params.packageName}.dao.I${table.camelNameU}Dao;
-import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
+import ${params.basePackage}.biz.${table.params.packageName}.I${table.camelNameU}Service;
+import ${params.basePackage}.db.${table.params.packageName}.dao.I${table.camelNameU}Dao;
+import ${params.basePackage}.db.${table.params.packageName}.dto.${table.camelNameU};
 import ${params.packageMap["SecurityUser"]};
 import ${params.packageMap["Page"]};
 import ${params.packageMap["ResultBean"]};

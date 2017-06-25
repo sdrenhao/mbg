@@ -72,7 +72,7 @@ public class ControllerGeneratorHandler implements IGeneratorHandler {
 
     private String getFileName(GeneratorParams params, TableInfo ti) {
         return getPath(params.getWebPath(), params.getBasePackage()) + File.separator
-                + params.getPackageName() + File.separator 
+                + ti.getParams().getPackageName() + File.separator 
                 + "controller" + File.separator
                 + getName(ti.getCamelNameU());
     }

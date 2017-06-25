@@ -17,15 +17,18 @@ public class TableInfo {
     private String camelNameU;
 
     private String camelNameL;
+    
+    private TableParams params;
 
     public TableInfo() {
 
     }
 
-    public TableInfo(String tableName, String omitPrefix, boolean removeEndS) {
-        this.tableName = tableName;
-        this.camelNameU = CommonUtil.camelNameOmitPrefix(tableName, false, omitPrefix,removeEndS);
-        this.camelNameL = CommonUtil.camelNameOmitPrefix(tableName, true, omitPrefix,removeEndS);
+    public TableInfo(TableParams params) {
+        this.params = params;
+        this.tableName = params.getTableName();
+        this.camelNameU = CommonUtil.camelNameOmitPrefix(tableName, false, params.getOmitPrefix(),params.isRemoveEndS());
+        this.camelNameL = CommonUtil.camelNameOmitPrefix(tableName, true, params.getOmitPrefix(),params.isRemoveEndS());
     }
 
     /**
@@ -71,5 +74,19 @@ public class TableInfo {
      */
     public void setCamelNameL(String camelNameL) {
         this.camelNameL = camelNameL;
+    }
+
+    /**
+     * @return the params
+     */
+    public TableParams getParams() {
+        return params;
+    }
+
+    /**
+     * @param params the params to set
+     */
+    public void setParams(TableParams params) {
+        this.params = params;
     }
 }

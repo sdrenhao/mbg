@@ -10,6 +10,8 @@ package com.uxiaoxi.mbg.handler.bean;
 public class TableParams {
 
     private String tableName;// 表名
+    
+    private String packageName; // 包名
 
     private String omitPrefix;// 省略
     
@@ -21,18 +23,20 @@ public class TableParams {
     
     private Integer gridWidth; // 表格宽度
     
-    public TableParams(String tableName) {
+    public TableParams(String tableName, String packageName) {
         super();
         this.tableName = tableName;
+        this.packageName = packageName;
         this.omitPrefix = "";
         this.prePath = "";
         this.pageName= "";
         this.gridWidth = 12;
     }
 
-    public TableParams(String tableName, String omitPrefix) {
+    public TableParams(String tableName, String packageName, String omitPrefix) {
         super();
         this.tableName = tableName;
+        this.packageName = packageName;
         this.omitPrefix = omitPrefix;
         this.removeEndS = false;
         this.prePath = "";
@@ -40,9 +44,10 @@ public class TableParams {
         this.gridWidth = 12;
     }
     
-    public TableParams(String tableName, String omitPrefix,boolean removeEndS) {
+    public TableParams(String tableName, String packageName, String omitPrefix,boolean removeEndS) {
         super();
         this.tableName = tableName;
+        this.packageName = packageName;
         this.omitPrefix = omitPrefix;
         this.removeEndS = removeEndS;
         this.prePath = "";
@@ -51,9 +56,10 @@ public class TableParams {
     }
     
     
-    public TableParams(String tableName, String omitPrefix,boolean removeEndS,String prePath, String pageName, Integer gridWidth) {
+    public TableParams(String tableName, String packageName, String omitPrefix,boolean removeEndS,String prePath, String pageName, Integer gridWidth) {
         super();
         this.tableName = tableName;
+        this.packageName = packageName;
         this.omitPrefix = omitPrefix;
         this.removeEndS = removeEndS;
         this.prePath = prePath;
@@ -126,6 +132,20 @@ public class TableParams {
      */
     public void setGridWidth(Integer gridWidth) {
         this.gridWidth = gridWidth;
+    }
+
+    /**
+     * @return the packageName
+     */
+    public String getPackageName() {
+        return packageName;
+    }
+
+    /**
+     * @param packageName the packageName to set
+     */
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
 
 

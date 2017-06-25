@@ -40,10 +40,10 @@ public class GeneratorParams {
      */
     private String basePackage;
     
-    /**
-     * 包名
-     */
-    private String packageName;
+//    /**
+//     * 包名
+//     */
+//    private String packageName;
     
     /**
      * 忽略列表
@@ -96,19 +96,19 @@ public class GeneratorParams {
         this.basePackage = basePackage;
     }
 
-    /**
-     * @return the packageName
-     */
-    public String getPackageName() {
-        return packageName;
-    }
-
-    /**
-     * @param packageName the packageName to set
-     */
-    public void setPackageName(String packageName) {
-        this.packageName = packageName;
-    }
+//    /**
+//     * @return the packageName
+//     */
+//    public String getPackageName() {
+//        return packageName;
+//    }
+//
+//    /**
+//     * @param packageName the packageName to set
+//     */
+//    public void setPackageName(String packageName) {
+//        this.packageName = packageName;
+//    }
 
 //	public List<String> getIgnoreList() {
 //		return ignoreList;

@@ -1,7 +1,7 @@
 /**
  * ${table.camelNameU}Controller.java
  */
-package ${params.basePackage}.web.${params.packageName}.controller;
+package ${params.basePackage}.web.${table.params.packageName}.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ${params.basePackage}.biz.${params.packageName}.I${table.camelNameU}Service;
-import ${params.basePackage}.db.${params.packageName}.dto.${table.camelNameU};
+import ${params.basePackage}.biz.${table.params.packageName}.I${table.camelNameU}Service;
+import ${params.basePackage}.db.${table.params.packageName}.dto.${table.camelNameU};
 import ${params.packageMap["SecurityUser"]};
 import ${params.packageMap["Page"]};
 import ${params.packageMap["JqPrmNames"]};
@@ -22,7 +22,7 @@ import ${params.packageMap["ResultBean"]};
  * ${.now?date}
  */
 @Controller
-@RequestMapping("${table.prePath!""}/${params.packageName}")
+@RequestMapping("${table.params.prePath!""}/${table.params.packageName}")
 public class ${table.camelNameU}Controller {
     
     @Autowired
@@ -30,7 +30,7 @@ public class ${table.camelNameU}Controller {
     
     @RequestMapping("/${table.tableName}")
     public String display() {
-        return "${params.packageName}/${table.camelNameL}";
+        return "${table.params.packageName}/${table.camelNameL}";
     }
     
     @ResponseBody
