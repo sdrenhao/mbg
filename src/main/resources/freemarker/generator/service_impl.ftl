@@ -54,7 +54,6 @@ public class ${table.camelNameU}ServiceImpl implements I${table.camelNameU}Servi
         Date nowtime = new Date();
         ${table.camelNameL}.setCreateAt(nowtime);
         ${table.camelNameL}.setUpdateBy(currentUser.getId());
-        ${table.camelNameL}.setUseYn(true);
         return ${table.camelNameL}Dao.updateByPrimaryKeySelective(${table.camelNameL});
     }
 
