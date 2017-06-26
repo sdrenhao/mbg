@@ -43,7 +43,6 @@ public class Generator {
         // 设置参数
         GeneratorParams info = new GeneratorParams();
         info.setBasePackage("com.unisedu.megagame");
-//        info.setPackageName("megaclass");
         info.setPath("E:\\git\\unisedu\\codes\\unisedu-parent\\");
         info.setDaoPath(info.getPath()+"unisedu-megagame-dao");
         info.setServicePath(info.getPath()+"unisedu-megagame-service");
