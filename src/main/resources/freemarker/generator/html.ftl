@@ -4,9 +4,6 @@ ${r"<#assign"} loadscript=["/js/util/utils.js","/js/${table.params.packageName}/
 ${r"<@main.html "} csslist=loadcss scriptlist=loadscript menu="${table.params.packageName}" submenu="${table.tableName}">
 
       <div class="app-content-body fade-in-up">
-          <div class="app-content-title">
-              <h1 class="font-thin">${table.params.pageName!""}</h1>
-          </div>
           <div class="wrapper-md">
               <div class="row">
                   <div class="col-md-${table.params.gridWidth!"12"}" id="list_id">
@@ -18,7 +15,5 @@ ${r"<@main.html "} csslist=loadcss scriptlist=loadscript menu="${table.params.pa
               </div>
           </div>
       </div>
-    
-    
     
 ${r"</@main.html> "}
