@@ -34,25 +34,29 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-        list.add(new TableParams("unisedu_megagame_class","megaclass","unisedu_",false,"/admin","班级管理",12));
-        list.add(new TableParams("unisedu_megagame_class_type","megaclass","unisedu_",false,"/admin","班级分类",12));
-        list.add(new TableParams("unisedu_megagame_class_teacher","megaclass","unisedu_",false,"/admin","班主任",12));
-        list.add(new TableParams("unisedu_megagame_teacher_resources","megaclass","unisedu_",true,"/admin","班主任管理",12));
+//        list.add(new TableParams("unisedu_megagame_class","megaclass","unisedu_",false,"/admin","班级管理",12));
+//        list.add(new TableParams("unisedu_megagame_class_type","megaclass","unisedu_",false,"/admin","班级分类",12));
+//        list.add(new TableParams("unisedu_megagame_class_teacher","megaclass","unisedu_",false,"/admin","班主任",12));
+//        list.add(new TableParams("unisedu_megagame_teacher_resources","megaclass","unisedu_",true,"/admin","班主任管理",12));
 
+//        list.add(new TableParams("sys_resources","user","sys_",true,"/admin","资源管理",12));
+        list.add(new TableParams("sys_user","user","sys_",true,"/admin","用户管理",6));
+        list.add(new TableParams("sys_role","user","sys_",true,"/admin","角色管理",6));
+        list.add(new TableParams("sys_user_role","user","sys_",true,"/admin","用户角色管理",6));
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.unisedu.megagame");
+        info.setBasePackage("com.unisedu.sysusr");
         info.setPath("E:\\git\\unisedu\\codes\\unisedu-parent\\");
-        info.setDaoPath(info.getPath()+"unisedu-megagame-dao");
-        info.setServicePath(info.getPath()+"unisedu-megagame-service");
-        info.setWebPath(info.getPath()+"unisedu-megagame-web");
+        info.setDaoPath(info.getPath()+"unisedu-sysusr-dao");
+        info.setServicePath(info.getPath()+"unisedu-sysusr-service");
+        info.setWebPath(info.getPath()+"unisedu-sysusr-web");
         
-         info.getQueueSet().add("controller");
          info.getQueueSet().add("dao");
+         info.getQueueSet().add("service");
+         info.getQueueSet().add("controller");
          info.getQueueSet().add("html");
          info.getQueueSet().add("js");
-         info.getQueueSet().add("service");
 //         info.getQueueSet().add("api");
 
         // api请求路径，生成api的时候有用
