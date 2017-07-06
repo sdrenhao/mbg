@@ -10,10 +10,10 @@ $(function() {
         datatype : 'json',
         mtype : 'POST',
         autowidth : true,
-        colNames : [ <#list tableFieldList as tfield>'${tfield.comment}'<#if tfield_index lt (tableFieldList?size - 1)  >,</#if> </#list>],
         colModel : [ 
     <#list tableFieldList as tfield>
-        {
+        {	
+        	label : '${tfield.comment}',
             name :  '<@uxiaoxi.camel str=tfield.field />',
             index : 't.${tfield.field}',<#if tfield.type == "timestamp" || tfield.type == "datetime" >
             editable : false,
