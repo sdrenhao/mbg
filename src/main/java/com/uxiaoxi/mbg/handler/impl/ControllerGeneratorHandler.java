@@ -67,7 +67,7 @@ public class ControllerGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getPath(String path, String basepackage) {
-        return path + File.separator + CommonUtil.javaBasePath(basepackage) + File.separator + "web";
+        return path + File.separator + CommonUtil.javaBasePath(basepackage);
     }
 
     private String getFileName(GeneratorParams params, TableInfo ti) {

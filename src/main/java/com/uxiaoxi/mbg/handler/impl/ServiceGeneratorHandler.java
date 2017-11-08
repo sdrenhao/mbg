@@ -75,7 +75,7 @@ public class ServiceGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getInterfaceName(String camelName) {
-        return "I" + camelName + "Service.java";
+        return camelName + "Service.java";
     }
 
     private String getImplName(String camelName) {
@@ -83,12 +83,12 @@ public class ServiceGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getPath(String path, String basepackage) {
-        return path + File.separator + CommonUtil.javaBasePath(basepackage) + File.separator + "biz";
+        return path + File.separator + CommonUtil.javaBasePath(basepackage) ;
     }
     
     private String getFileName(GeneratorParams params, TableInfo ti,String name) {
         return getPath(params.getServicePath(), params.getBasePackage()) + File.separator
-                + ti.getParams().getPackageName() + File.separator
+                + ti.getParams().getPackageName() + File.separator + "service" + File.separator 
                 + name;
     }
 

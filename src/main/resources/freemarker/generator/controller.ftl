@@ -1,67 +1,32 @@
 /**
  * ${table.camelNameU}Controller.java
  */
-package ${params.basePackage}.web.${table.params.packageName}.controller;
+package ${params.basePackage}.${table.params.packageName}.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import ${params.basePackage}.biz.${table.params.packageName}.I${table.camelNameU}Service;
-import ${params.basePackage}.db.${table.params.packageName}.dto.${table.camelNameU};
-import ${params.packageMap["SecurityUser"]};
-import ${params.packageMap["Page"]};
-import ${params.packageMap["JqPrmNames"]};
-import ${params.packageMap["ResultBean"]};
 
-/**
- * @author mbg
- *
- * ${.now?date}
- */
+
+import ${params.basePackage}.${table.params.packageName}.service.${table.camelNameU}Service;
+import cn.hecom.plugin.store.commons.model.CommonHeaders;
+import cn.hecom.plugin.store.commons.model.ResponseResult;
+
+
 @Controller
 @RequestMapping("${table.params.prePath!""}/${table.params.packageName}")
 public class ${table.camelNameU}Controller {
-    
-    @Autowired
-    private I${table.camelNameU}Service ${table.camelNameL}Service;
-    
-    @RequestMapping("/${table.tableName}")
-    public String display() {
-        return "${table.params.packageName}/${table.camelNameL}";
-    }
-    
-    @ResponseBody
-    @RequestMapping("/${table.tableName}/data")
-    public Page<${table.camelNameU}> getData(JqPrmNames parm) {
-        return ${table.camelNameL}Service.getData(parm.getSqlBean(), parm.getPage_no(),
-                parm.getPage_size());
-    }
 
-    @ResponseBody
-    @RequestMapping("/${table.tableName}/add")
-    public ResultBean add(${table.camelNameU} ${table.camelNameL}){
-        SecurityUser currentUser = (SecurityUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        ResultBean rs = ${table.camelNameL}Service.add(${table.camelNameL}, currentUser);
-        return rs;
-    }
-    
-    @ResponseBody
-    @RequestMapping("/${table.tableName}/edit")
-    public ResultBean edit(${table.camelNameU} ${table.camelNameL}){
-        SecurityUser currentUser = (SecurityUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        ResultBean rs = ${table.camelNameL}Service.edit(${table.camelNameL}, currentUser);
-        return rs;
-    }
-    
-    @ResponseBody
-    @RequestMapping("/${table.tableName}/del")
-    public ResultBean del(Long id){
-        SecurityUser currentUser = (SecurityUser)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        ResultBean rs = ${table.camelNameL}Service.del(id, currentUser);
-        return rs;
-    }
+    private static final Logger LOGGER = Logger.getLogger(${table.camelNameU}Controller.class);
+
+    @Autowired
+    private ${table.camelNameU}Service ${table.camelNameL}Service;
+
+
 
 }
