@@ -8,17 +8,21 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.uxiaoxi.mbg.freemarker.ITemplateService;
 import com.uxiaoxi.mbg.handler.IGeneratorHandler;
+import com.uxiaoxi.mbg.handler.bean.FiledsMapper;
 import com.uxiaoxi.mbg.handler.bean.GeneratorParams;
+import com.uxiaoxi.mbg.handler.bean.TableField;
 import com.uxiaoxi.mbg.handler.bean.TableInfo;
 import com.uxiaoxi.mbg.utils.CommonUtil;
 
@@ -37,10 +41,12 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
     @Autowired
     private ITemplateService templateService;
 
-    private static final String TEMPLATE_NAME = "generator/entity.ftl";
+    private static final String TEMPLATE_NAME = "generator/repository.ftl";
 
-    private static final String INTERFACE_TEMPLATE_NAME = "generator/repository.ftl";
+    private static final String INTERFACE_TEMPLATE_NAME = "generator/entity.ftl";
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Override
     public void generator(GeneratorParams params, TableInfo ti) throws IOException {
@@ -50,6 +56,10 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("params", params);
         map.put("table", ti);
+        
+        String sql = "SHOW FULL FIELDS FROM " + ti.getTableName();
+        List<TableField> list = jdbcTemplate.query(sql, new FiledsMapper());
+        map.put("tableFieldList", list);
 
         // 生成接口
         LOG.debug("开始生成dao接口");
@@ -57,7 +67,6 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
         // 生成实现类
         LOG.debug("开始生成dao实现类");
         createImpl(params, ti, map);
-
 
         LOG.debug("dao generator end.");
     }
@@ -77,7 +86,7 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getEntityName(String camelName) {
-        return "entity" + File.separator +camelName + "Entity.java";
+        return "entity" + File.separator +camelName + ".java";
     }
 
     private String getRepositoryName(String camelName) {
@@ -85,7 +94,7 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
     }
 
     private String getPath(String path, String basepackage) {
-        return path + File.separator + CommonUtil.javaBasePath(basepackage) + File.separator + "db";
+        return path + File.separator + CommonUtil.javaBasePath(basepackage);
     }
 
     private String getFileName(GeneratorParams params, TableInfo ti, String name) {
@@ -98,6 +107,5 @@ public class DaoGeneratorHandler implements IGeneratorHandler {
         return NAME;
     }
 
- 
 
 }

@@ -34,31 +34,26 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-//        list.add(new TableParams("unisedu_megagame_class","megaclass","unisedu_",false,"/admin","班级管理",12));
-//        list.add(new TableParams("unisedu_megagame_class_type","megaclass","unisedu_",false,"/admin","班级分类",12));
-//        list.add(new TableParams("unisedu_megagame_class_teacher","megaclass","unisedu_",false,"/admin","班主任",12));
-//        list.add(new TableParams("unisedu_megagame_teacher_resources","megaclass","unisedu_",true,"/admin","班主任管理",12));
 
-//        list.add(new TableParams("sys_resources","user","sys_",true,"/admin","资源管理",12));
-        list.add(new TableParams("sys_user","user","sys_",true,"/admin","用户管理",6));
-        list.add(new TableParams("sys_role","user","sys_",true,"/admin","角色管理",6));
-        list.add(new TableParams("sys_user_role","user","sys_",true,"/admin","用户角色管理",6));
-        
+        list.add(new TableParams("p_plugin_basic_info","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_dict_comment_tag","comment","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_comment_tag","comment","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_comment_text","comment","p_",true,"/plugin","",6));
+
+
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("com.unisedu.sysusr");
-        info.setPath("E:\\git\\unisedu\\codes\\unisedu-parent\\");
-        info.setDaoPath(info.getPath()+"unisedu-sysusr-dao");
-        info.setServicePath(info.getPath()+"unisedu-sysusr-service");
-        info.setWebPath(info.getPath()+"unisedu-sysusr-web");
+        info.setBasePackage("cn.hecom.plugin.store");
+        info.setPath("/Users/renhao/git/hq-mgmt/");
+        info.setDaoPath(info.getPath()+"plugin-store");
+        info.setServicePath(info.getPath()+"plugin-store");
+        info.setWebPath(info.getPath()+"plugin-store");
         
          info.getQueueSet().add("dao");
-         info.getQueueSet().add("service");
-         info.getQueueSet().add("controller");
-         info.getQueueSet().add("html");
-         info.getQueueSet().add("js");
-//         info.getQueueSet().add("api");
+//         info.getQueueSet().add("service");
+//         info.getQueueSet().add("controller");
 
+         
         // api请求路径，生成api的时候有用
         List<String> reqPathList = new ArrayList<String>();
         reqPathList.add("");
@@ -70,17 +65,6 @@ public class Generator {
             tableList.add(tinfo);
         }
         
-        Map<String,String> packageMap = new HashMap<String,String>();
-        
-        packageMap.put("Page", "com.mincoo.framework.page.model.Page");
-        packageMap.put("JqPrmNames", "com.mincoo.framework.common.vo.JqPrmNames");
-        packageMap.put("ResultBean", "com.mincoo.framework.common.vo.ResultBean");
-        packageMap.put("SqlBean", "com.mincoo.framework.common.vo.SqlBean");
-        packageMap.put("BaseSupport", "com.mincoo.framework.db.impl.BaseSupport");
-        packageMap.put("IBaseSupport", "com.mincoo.framework.db.IBaseSupport");
-        packageMap.put("SecurityUser", "com.unisedu.security.mdoel.SecurityUser");
-        
-        info.setPackageMap(packageMap);
 
         for (TableInfo ti : tableList) {
 

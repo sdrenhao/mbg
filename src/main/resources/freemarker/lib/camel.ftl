@@ -11,3 +11,9 @@
         </#if>
     </#list>
 </#if>${result}</#macro>
+
+<#macro camelU str="">
+<#assign result="" >
+<#list str?split("_") as s>
+        <#assign result=result + s?cap_first >
+</#list>${result}</#macro>

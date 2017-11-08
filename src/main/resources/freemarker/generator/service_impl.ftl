@@ -1,7 +1,7 @@
 /**
  * ${table.camelNameU}ServiceImpl.java
  */
-package ${params.basePackage}.${table.params.packageName}.impl;
+package ${params.basePackage}.${table.params.packageName}.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
