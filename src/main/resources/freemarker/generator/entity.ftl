@@ -11,7 +11,21 @@ import cn.hecom.plugin.store.commons.entity.PluginBaseEntity;
 
 
 @Entity
-@Table(name = "p_plugin_recommend_banner")
-public class Banner extends PluginBaseEntity {
+@Table(name = "${table.tableName}")
+public class ${table.camelNameU} extends PluginBaseEntity {
+
+<#import "/lib/camel.ftl" as uxiaoxi> 
+<#list tableFieldList as tfield>
+
+
+
+
+    @Column(name = "${tfield.field}")
+    private  <@uxiaoxi.camel str=tfield.field />;
+    
+
+
+
+</#list>
 
 }
