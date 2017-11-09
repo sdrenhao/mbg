@@ -34,11 +34,27 @@ public class Generator {
         ctx = new FileSystemXmlApplicationContext("src/main/resources/ApplicationContext.xml");
 
         List<TableParams> list = new ArrayList<TableParams>();
-
+        
+        list.add(new TableParams("p_dict_category","dict","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_dict_comment_tag","dict","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_dict_function_entrance","dict","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_dict_plugin_permission","dict","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_dict_plugin_structure","dict","p_",true,"/plugin","",6));
         list.add(new TableParams("p_plugin_basic_info","plugin","p_",true,"/plugin","",6));
-        list.add(new TableParams("p_dict_comment_tag","comment","p_",true,"/plugin","",6));
-        list.add(new TableParams("p_plugin_comment_tag","comment","p_",true,"/plugin","",6));
-        list.add(new TableParams("p_plugin_comment_text","comment","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_comment_tag","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_comment_text","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_description","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_developer","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_display_info","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_service","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_setting_info","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_setup_info","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_structure_info","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_plugin_version","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_ref_plugin_category","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_ref_plugin_ent","plugin","p_",true,"/plugin","",6));
+        list.add(new TableParams("p_ref_plugin_permission","plugin","p_",true,"/plugin","",6));
+        
 
 
         // 设置参数

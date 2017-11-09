@@ -6,6 +6,7 @@ package ${params.basePackage}.${table.params.packageName}.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
 <#if table.tableName?contains("dict_")>
 import cn.hecom.plugin.store.commons.entity.PluginDictEntity;
 <#else>
