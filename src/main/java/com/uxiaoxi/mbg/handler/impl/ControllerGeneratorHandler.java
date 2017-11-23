@@ -1,5 +1,5 @@
 /**
- * DaoGeneratorHandler.java
+ * RepositoryGeneratorHandler.java
  */
 package com.uxiaoxi.mbg.handler.impl;
 
