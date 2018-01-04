@@ -34,22 +34,22 @@ public class Generator {
         List<TableParams> list = new ArrayList<TableParams>();
         
 
-        list.add(new TableParams("t_h_psi_order_attachments","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_refund","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_receipt","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_account_info","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_receipt_attachs","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_orders","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_models","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_customer_consignees","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_consignees","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_comment","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_customer_invoices","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_invoices","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_flow","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_ent_order_flow","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_wareh_out","order","t_h_",true,"/psi","",6));
-        list.add(new TableParams("t_h_psi_order_delivery","order","t_h_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_attachments","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_refund","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_receipt","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_account_info","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_receipt_attachs","order","t_h_psi_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_orders","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_models","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_customer_consignees","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_consignees","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_comment","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_customer_invoices","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_invoices","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_flow","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_ent_order_flow","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_wareh_out","order","t_h_psi_",true,"/psi","",6));
+//        list.add(new TableParams("t_h_psi_order_delivery","order","t_h_psi_",true,"/psi","",6));
         
         
         // 设置参数
@@ -60,8 +60,9 @@ public class Generator {
         info.setServicePath(info.getPath()+"hqt-psi");
         info.setWebPath(info.getPath()+"hqt-psi");
         
-         info.getQueueSet().add("entity");
-//         info.getQueueSet().add("repository");
+//         info.getQueueSet().add("entity");
+         
+         info.getQueueSet().add("dao");
 //         info.getQueueSet().add("service");
 //         info.getQueueSet().add("controller");
 
