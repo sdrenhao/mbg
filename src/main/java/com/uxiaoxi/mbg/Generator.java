@@ -62,9 +62,9 @@ public class Generator {
         
 //         info.getQueueSet().add("entity");
          
-         info.getQueueSet().add("dao");
+//         info.getQueueSet().add("dao");
 //         info.getQueueSet().add("service");
-//         info.getQueueSet().add("controller");
+         info.getQueueSet().add("controller");
 
          
         // api请求路径，生成api的时候有用
