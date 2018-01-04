@@ -165,4 +165,15 @@ public class CommonUtil {
         System.out.println(javaBasePath("com.uxiaoxi.ym"));
     }
 
+ 
+    public static String removePre(String name, String omitPrefix) {
+        
+        if (StringUtils.isNotBlank(omitPrefix)) {
+            if (name.startsWith(omitPrefix)) {
+                name = name.replaceFirst(omitPrefix, "");
+            }
+        }
+        return name;
+    }
+
 }

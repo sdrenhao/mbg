@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 
 import com.uxiaoxi.mbg.freemarker.ITemplateService;
 import com.uxiaoxi.mbg.handler.IGeneratorHandler;
-import com.uxiaoxi.mbg.handler.bean.FiledsMapper;
 import com.uxiaoxi.mbg.handler.bean.GeneratorParams;
+import com.uxiaoxi.mbg.handler.bean.OracleFiledMapper;
 import com.uxiaoxi.mbg.handler.bean.TableField;
 import com.uxiaoxi.mbg.handler.bean.TableInfo;
 import com.uxiaoxi.mbg.utils.CommonUtil;
@@ -53,8 +53,8 @@ public class EntityGeneratorHandler implements IGeneratorHandler {
         map.put("params", params);
         map.put("table", ti);
         
-        String sql = "SHOW FULL FIELDS FROM " + ti.getTableName();
-        List<TableField> list = jdbcTemplate.query(sql, new FiledsMapper());
+        String sql = "SELECT A.DATA_PRECISION,A.DATA_SCALE,A.DATA_TYPE,A.COLUMN_NAME,C.COMMENTS FROM USER_TAB_COLUMNS A  LEFT JOIN USER_COL_COMMENTS C ON A.TABLE_NAME = C.TABLE_NAME AND A.COLUMN_NAME = C.COLUMN_NAME WHERE A.TABLE_NAME= '" + ti.getTableName().toUpperCase() +"'";
+        List<TableField> list = jdbcTemplate.query(sql, new OracleFiledMapper());
         map.put("tableFieldList", list);
 
         // 生成接口

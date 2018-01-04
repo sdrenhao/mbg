@@ -19,6 +19,8 @@ public class TableInfo {
     private String camelNameL;
     
     private TableParams params;
+    
+    private String nopreTableName;
 
     public TableInfo() {
 
@@ -29,6 +31,7 @@ public class TableInfo {
         this.tableName = params.getTableName();
         this.camelNameU = CommonUtil.camelNameOmitPrefix(tableName, false, params.getOmitPrefix(),params.isRemoveEndS());
         this.camelNameL = CommonUtil.camelNameOmitPrefix(tableName, true, params.getOmitPrefix(),params.isRemoveEndS());
+        this.nopreTableName = CommonUtil.removePre(tableName,params.getOmitPrefix());
     }
 
     /**
@@ -88,5 +91,13 @@ public class TableInfo {
      */
     public void setParams(TableParams params) {
         this.params = params;
+    }
+
+    public String getNopreTableName() {
+        return nopreTableName;
+    }
+
+    public void setNopreTableName(String nopreTableName) {
+        this.nopreTableName = nopreTableName;
     }
 }

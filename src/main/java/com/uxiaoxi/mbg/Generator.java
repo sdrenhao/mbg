@@ -33,41 +33,35 @@ public class Generator {
 
         List<TableParams> list = new ArrayList<TableParams>();
         
-//        list.add(new TableParams("p_dict_category","dict","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_dict_comment_tag","dict","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_dict_plugin_entrance","dict","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_dict_plugin_permission","dict","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_dict_plugin_structure","dict","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_basic_info","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_comment_tag","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_comment_text","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_description","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_developer","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_display_info","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_service","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_setting_info","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_setup_info","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_structure_info","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_version","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_ref_plugin_category","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_ref_plugin_ent","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_ref_plugin_permission","plugin","p_",true,"/plugin","",6));
-        
-//        list.add(new TableParams("p_ref_plugin_default_entrance","plugin","p_",true,"/plugin","",6));
-//        list.add(new TableParams("p_plugin_white_list","plugin","p_",true,"/plugin","",6));
-        list.add(new TableParams("p_plugin_isv_permanent_code","plugin","p_",true,"/plugin","",6));
+
+        list.add(new TableParams("t_h_psi_order_attachments","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_refund","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_receipt","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_account_info","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_receipt_attachs","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_orders","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_models","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_customer_consignees","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_consignees","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_comment","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_customer_invoices","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_invoices","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_flow","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_ent_order_flow","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_wareh_out","order","t_h_",true,"/psi","",6));
+        list.add(new TableParams("t_h_psi_order_delivery","order","t_h_",true,"/psi","",6));
         
         
         // 设置参数
         GeneratorParams info = new GeneratorParams();
-        info.setBasePackage("cn.hecom.plugin.store");
-        info.setPath("/Users/renhao/git/hq-mgmt/");
-        info.setDaoPath(info.getPath()+"plugin-store");
-        info.setServicePath(info.getPath()+"plugin-store");
-        info.setWebPath(info.getPath()+"plugin-store");
+        info.setBasePackage("cn.hecom.hqt.psi");
+        info.setPath("/Users/renhao/git_hecom/hq-mgmt/");
+        info.setDaoPath(info.getPath()+"hqt-psi");
+        info.setServicePath(info.getPath()+"hqt-psi");
+        info.setWebPath(info.getPath()+"hqt-psi");
         
          info.getQueueSet().add("entity");
-         info.getQueueSet().add("repository");
+//         info.getQueueSet().add("repository");
 //         info.getQueueSet().add("service");
 //         info.getQueueSet().add("controller");
 
